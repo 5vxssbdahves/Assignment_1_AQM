@@ -1,1 +1,1 @@
-clearset more offwebuse lutkepohl2.dta, cleardesarima ln_invarima ln_incarima ln_consump
+clearset more offwebuse lutkepohl2.dta, cleardesscatter ln_inv qtrgraph export fig1.png, replaceac ln_invpac ln_invarima ln_invarima ln_incarima ln_consump

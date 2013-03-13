@@ -1,0 +1,1 @@
+clearset more offwebuse lutkepohl2.dta, cleardes

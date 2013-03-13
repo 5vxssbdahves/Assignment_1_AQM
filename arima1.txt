@@ -1,0 +1,1 @@
+	(1)	(2)	(3)VARIABLES	ln_inv	ARMA	sigma			L.ar		0.998***			(0.0114)	Constant	5.966***		0.0476***	(0.712)		(0.00242)			Observations	92	92	92Standard errors in parentheses			*** p<0.01, ** p<0.05, * p<0.1			

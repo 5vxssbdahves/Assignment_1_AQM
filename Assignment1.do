@@ -1,1 +1,1 @@
-clearset more offwebuse lutkepohl2.dta, cleardesscatter ln_inv qtrgraph export fig1.png, replaceac ln_invpac ln_invarima ln_invarima ln_incarima ln_consump
+clearlog using assignemnt1.log, replaceset more offwebuse lutkepohl2.dta, cleardesscatter ln_inv qtrgraph export fig1.png, replaceac ln_invgraph export fig2.png, replacepac ln_invgraph export fig3.png, replacearima ln_inv, ar(1)outreg2 using arima1, append texarima ln_incarima ln_consumplog close

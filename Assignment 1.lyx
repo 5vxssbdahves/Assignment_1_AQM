@@ -80,6 +80,54 @@ Identify, estimate and diagnostic check ARIMA models for each of the following
 \end_layout
 
 \begin_layout Standard
+To identity an ARIMA model we must check for stationarity, correct for stationar
+ity and examine the correlograms for the autocorrelations and partial autocorrel
+ations.
+\end_layout
+
+\begin_layout Standard
+As can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Autocorrelation-function-of"
+
+\end_inset
+
+, the ACF decays monotonically.
+\end_layout
+
+\begin_layout Standard
+That the ACF decays slowly indicates that the data is non-stationary.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.polsci.wvu.edu/duval/ps791c/Notes/Stata/arimaident.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The PACF cuts off after one lag (see figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Partical-autocorrelation-functio"
+
+\end_inset
+
+), so we probably have an AR(1) process.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -231,6 +279,52 @@ name "fig:Partical-autocorrelation-functio"
 \begin_layout Plain Layout
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "arima1 copy.tex"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Assignment 1"
+options "bibtotoc,chicago"
 
 \end_inset
 

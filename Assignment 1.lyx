@@ -4,7 +4,8 @@
 \begin_header
 \textclass article
 \begin_preamble
-\renewcommand\thesection{\fnsymbol{section}}
+\renewcommand\thesection{\alph{section}.}
+\renewcommand\thesubsection{\thesection\roman{subsection}.}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -72,7 +73,7 @@ Ada Ziemyte, Shalva, Anders Riis
 \end_layout
 
 \begin_layout Section
-a.
+ARIMA Models
 \end_layout
 
 \begin_layout Quote
@@ -102,6 +103,12 @@ target "http://www.polsci.wvu.edu/duval/ps791c/Notes/Stata/arimaident.html"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+ARIMA model for 
+\emph on
+ln_inv
 \end_layout
 
 \begin_layout Standard
@@ -405,13 +412,18 @@ reference "fig:ARIMA(0,1,0)-of-ln_inv"
 \end_inset
 
  shows the regression results of such an estimation.
+ It does not make sense to do an
+\family typewriter
+ armaroot 
+\family default
+test as we have no AR or MA parameters in the model.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -448,6 +460,282 @@ filename "arima1.tex"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Using the Portmanteau statistics yield...
+\end_layout
+
+\begin_layout Subsection
+ARIMA model for 
+\emph on
+ln_inc
+\end_layout
+
+\begin_layout Standard
+We turn to the variable 
+\emph on
+ln_inc.
+ 
+\emph default
+The graphs shown in 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Graphs-for-ln_inc"
+
+\end_inset
+
+ again demonstrate that we probably have non-stationary data, so we do a
+ first difference transformation again.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graphs for 
+\emph on
+ln_inc
+\emph default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Graphs-for-ln_inc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig7.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig9.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The results of this first difference transformation can be seen in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Graphs-of-ln_inc"
+
+\end_inset
+
+.
+ Now the data does not portray a non-stationary mean, so we decide that
+ 
+\begin_inset Formula $d=1$
+\end_inset
+
+.
+ Again the case is more ambiguous for the ACF and PACF.
+ We could again conclude that the ACF never cuts off, so we have a MA(0),
+ where 
+\begin_inset Formula $q=0$
+\end_inset
+
+, and the PACF never cuts off (becomes zero), so 
+\begin_inset Formula $p=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graphs of 
+\emph on
+ln_inc
+\emph default
+ after first differencing
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Graphs-of-ln_inc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig10.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig11.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig12.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estimating an ARIMA(0,1,0) model gives the results shown in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Results-from-ARIMA(0,1,0)"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Results from ARIMA(0,1,0) of 
+\emph on
+ln_inc
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Results-from-ARIMA(0,1,0)"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "arima2.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+ARIMA model for 
+\series medium
+\size normal
+\emph on
+ln_consump
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

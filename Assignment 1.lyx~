@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\renewcommand\thesection{\fnsymbol{section}}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language british
@@ -69,10 +72,10 @@ Ada Ziemyte, Shalva, Anders Riis
 \end_layout
 
 \begin_layout Section
-Exercise a.
+a.
 \end_layout
 
-\begin_layout Quotation
+\begin_layout Quote
 
 \emph on
 Identify, estimate and diagnostic check ARIMA models for each of the following
@@ -83,21 +86,6 @@ Identify, estimate and diagnostic check ARIMA models for each of the following
 To identity an ARIMA model we must check for stationarity, correct for stationar
 ity and examine the correlograms for the autocorrelations and partial autocorrel
 ations.
-\end_layout
-
-\begin_layout Standard
-As can be seen in figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Autocorrelation-function-of"
-
-\end_inset
-
-, the ACF decays monotonically.
-\end_layout
-
-\begin_layout Standard
-That the ACF decays slowly indicates that the data is non-stationary.
 \begin_inset Foot
 status collapsed
 
@@ -117,25 +105,10 @@ target "http://www.polsci.wvu.edu/duval/ps791c/Notes/Stata/arimaident.html"
 \end_layout
 
 \begin_layout Standard
-The PACF cuts off after one lag (see figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Partical-autocorrelation-functio"
-
-\end_inset
-
-), so we probably have an AR(1) process.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -176,10 +149,6 @@ name "fig:Scatterplot-of-ln_inv"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -190,10 +159,6 @@ name "fig:Scatterplot-of-ln_inv"
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -240,10 +205,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -276,13 +237,174 @@ name "fig:Partical-autocorrelation-functio"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Autocorrelation-function-of"
+
+\end_inset
+
+, the ACF decays monotonically.
+ That the ACF decays slowly indicates that the data is non-stationary, i.e.
+ that we have a non-stationary mean.
+\begin_inset Foot
+status collapsed
+
 \begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.polsci.wvu.edu/duval/ps791c/Notes/Stata/arimaident.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Stationarity is when we have a flat looking series without trend.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc442.htm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The scatterplot in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Scatterplot-of-ln_inv"
+
+\end_inset
+
+ also indicates that the series is non-stationary as we can see a clear
+ trend.
+ The PACF cuts off after one lag (see figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Partical-autocorrelation-functio"
+
+\end_inset
+
+), so we probably have an AR(1) process.
+ However, because of non-stationarity we first attempt to correct for this
+ by taking the first difference.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graphs for 
+\emph on
+ln_inv
+\emph default
+ after correcting for stationarity
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Graphs-for-ln_inv"
+
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Graphs-for-ln_inv"
+
+\end_inset
+
+ we see that the scatterplot is flatter, portraying stationarity.
+ The ACF decays in an alternating or oscillating fashion, probably portraying
+ some sort of MA as it seems to cut off (becomes zero) after four values
+ or after zero values (
+\begin_inset Formula $q=0)$
+\end_inset
+
+.
+ The PACF never seems to cut off (
+\begin_inset Formula $p=0)$
+\end_inset
+
+, although it can be seen as decaying.
+ Thus, we have evidence of an ARIMA(0,1,0) model.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:ARIMA(0,1,0)-of-ln_inv"
+
+\end_inset
+
+ shows the regression results of such a model.
 \end_layout
 
 \begin_layout Standard
@@ -295,7 +417,16 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Test
+ARIMA(0,1,0) of 
+\emph on
+ln_inv
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ARIMA(0,1,0)-of-ln_inv"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -304,10 +435,11 @@ Test
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset CommandInset include
 LatexCommand input
 preview true
-filename "arima1 copy.tex"
+filename "arima1.tex"
 
 \end_inset
 

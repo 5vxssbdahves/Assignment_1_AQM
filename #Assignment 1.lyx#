@@ -251,8 +251,7 @@ reference "fig:Autocorrelation-function-of"
 \end_inset
 
 , the ACF decays monotonically.
- That the ACF decays slowly indicates that the data is non-stationary, i.e.
- that we have a non-stationary mean.
+ That the ACF decays slowly indicates that the data is non-stationary.
 \begin_inset Foot
 status collapsed
 
@@ -384,49 +383,21 @@ reference "fig:Graphs-for-ln_inv"
 \end_inset
 
  we see that the scatterplot is flatter, portraying stationarity.
- The ACF decays in an alternating or oscillating fashion, probably portraying
- some sort of MA as it seems to cut off (becomes zero) after four values
- or after zero values (
-\begin_inset Formula $q=0)$
-\end_inset
-
-.
- The PACF never seems to cut off (
-\begin_inset Formula $p=0)$
-\end_inset
-
-, although it can be seen as decaying.
- Thus, we have evidence of an ARIMA(0,1,0) model.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:ARIMA(0,1,0)-of-ln_inv"
-
-\end_inset
-
- shows the regression results of such an estimation.
+ The ACF decays in an alternating or oscillating fashion.
+ The PACF never seems to cut off.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-ARIMA(0,1,0) of 
-\emph on
-ln_inv
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ARIMA(0,1,0)-of-ln_inv"
-
-\end_inset
-
-
+AR(1)
 \end_layout
 
 \end_inset
@@ -439,7 +410,7 @@ name "fig:ARIMA(0,1,0)-of-ln_inv"
 \begin_inset CommandInset include
 LatexCommand input
 preview true
-filename "arima1.tex"
+filename "arima1 copy.tex"
 
 \end_inset
 

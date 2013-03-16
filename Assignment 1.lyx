@@ -952,7 +952,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Misspecification tests
+Misspecification tests for dynamic linear model
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Misspecification-tests"
@@ -1074,7 +1074,7 @@ reference "tab:Error-Correction-Model"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1100,6 +1100,7 @@ name "tab:Error-Correction-Model"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset ERT
 status open
 
@@ -1129,6 +1130,42 @@ end{alltt}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The results of mis-specification tests are as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+footnotesize
+\backslash
+input{misspec2.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
 \end_layout
 
 \end_inset

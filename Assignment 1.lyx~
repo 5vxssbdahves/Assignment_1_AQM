@@ -1060,14 +1060,21 @@ See answer to assignment 4, IQM, p.
 
 \end_inset
 
- Running the regression gives:
+ Running the regression gives results as can be seen in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Error-Correction-Model"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1078,6 +1085,13 @@ status open
 
 \begin_layout Plain Layout
 Error Correction Model
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Error-Correction-Model"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1086,8 +1100,9 @@ Error Correction Model
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1100,7 +1115,7 @@ begin{alltt}
 
 {
 \backslash
-small
+footnotesize
 \backslash
 input{c1.log}}
 \end_layout
@@ -1115,6 +1130,42 @@ end{alltt}
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The results of mis-specification tests are as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+footnotesize
+\backslash
+input{misspec2.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
 \end_layout
 
 \end_inset

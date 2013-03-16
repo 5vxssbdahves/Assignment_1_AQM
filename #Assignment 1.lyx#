@@ -946,7 +946,7 @@ filename "reg_b1.tex"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -1036,8 +1036,101 @@ reference "eq:1"
 yields:
 \begin_inset Formula 
 \[
-\Delta y_{t}=a_{0}+\alpha_{1}\Delta y_{t-1}+\alpha_{2}\Delta y_{t-2}+\alpha\Delta_{3}y_{t-3}+\beta_{0}\Delta ln\_inc_{t}+ay_{t-3}+bln\_inc_{t}+c_{0}ln\_inv_{t}+u_{t}
+\Delta y_{t}=a_{0}+\alpha_{1}\Delta y_{t-1}+\alpha_{2}\Delta y_{t-2}+\alpha\Delta_{3}y_{t-3}+\beta_{0}\Delta ln\_inc_{t}+\gamma_{0}\Delta ln\_inv_{t}+ay_{t-1}+u_{t},
 \]
+
+\end_inset
+
+ again where 
+\begin_inset Formula $y$
+\end_inset
+
+ is 
+\begin_inset Formula $ln\_consump$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See answer to assignment 4, IQM, p.
+ 13.
+\end_layout
+
+\end_inset
+
+ Running the regression gives results as can be seen in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Error-Correction-Model"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Error Correction Model
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Error-Correction-Model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+footnotesize
+\backslash
+input{c1.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

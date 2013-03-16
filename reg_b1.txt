@@ -1,1 +1,22 @@
-	(1)VARIABLES	ln_consump	L.ln_consump	0.405***	(0.106)L2.ln_consump	0.278**	(0.113)L3.ln_consump	0.118	(0.111)L4.ln_consump	-0.154*	(0.0871)ln_inc	0.333***	(0.0490)ln_inv	0.00970	(0.0121)Constant	0.0493***	(0.0135)	Observations	88R-squared	1.000Standard errors in parentheses	*** p<0.01, ** p<0.05, * p<0.1	
+	(1)
+VARIABLES	ln_consump
+	
+L.ln_consump	0.405***
+	(0.106)
+L2.ln_consump	0.278**
+	(0.113)
+L3.ln_consump	0.118
+	(0.111)
+L4.ln_consump	-0.154*
+	(0.0871)
+ln_inc	0.333***
+	(0.0490)
+ln_inv	0.00970
+	(0.0121)
+Constant	0.0493***
+	(0.0135)
+	
+Observations	88
+R-squared	1.000
+Standard errors in parentheses	
+*** p<0.01, ** p<0.05, * p<0.1	

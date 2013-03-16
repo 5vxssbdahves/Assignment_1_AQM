@@ -6,6 +6,7 @@
 \begin_preamble
 \renewcommand\thesection{\alph{section}.}
 \renewcommand\thesubsection{\thesection\roman{subsection}.}
+\usepackage{alltt}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -912,21 +913,26 @@ status open
 
 
 \backslash
-begin{verbatim}
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+Test
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-input{misspec}
+input{misspec.log}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-end{verbatim}
+end{alltt}
 \end_layout
 
 \end_inset

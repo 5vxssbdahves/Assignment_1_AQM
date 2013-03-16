@@ -5,7 +5,7 @@
 \textclass article
 \begin_preamble
 \renewcommand\thesection{\alph{section}.}
-\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\renewcommand\thesubsection{\thesection\roman{subsection}.}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -72,6 +72,15 @@ AQM Assignment One
 Ada Ziemyte, Shalva, Anders Riis
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 ARIMA Models
 \end_layout
@@ -85,8 +94,7 @@ Identify, estimate and diagnostic check ARIMA models for each of the following
 
 \begin_layout Standard
 To identity an ARIMA model we must check for stationarity, correct for stationar
-ity and examine the correlograms for the autocorrelations and partial autocorrel
-ations.
+ity and examine the graphs for the autocorrelations and partial autocorrelations.
 \begin_inset Foot
 status collapsed
 
@@ -474,7 +482,7 @@ ln_inc
 \end_layout
 
 \begin_layout Standard
-We turn to the variable 
+We now turn to the variable 
 \emph on
 ln_inc.
  
@@ -727,12 +735,114 @@ filename "arima2.tex"
 
 \end_layout
 
+\begin_layout Standard
+The Portmanteau statistics yield...
+\end_layout
+
 \begin_layout Subsection
 ARIMA model for 
 \series medium
 \size normal
 \emph on
 ln_consump
+\end_layout
+
+\begin_layout Standard
+Identifying an ARIMA model for the variable 
+\emph on
+ln_consump
+\emph default
+ we again first look at some graphs in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Graphs-for-ln_consump"
+
+\end_inset
+
+.
+ Again we have to take the first diffference to correct for stationarity.
+ After this is done we see in the lower pane that we have a stationary mean.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graphs for 
+\emph on
+ln_consump
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Graphs-for-ln_consump"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig13.png
+	display false
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig14.png
+	display false
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estimating an ARIMA(?,1?) gives...
+\end_layout
+
+\begin_layout Section
+Dynamic linear model
+\end_layout
+
+\begin_layout Quote
+
+\emph on
+Formulate and estimate a dynamic linear model with four lags for ln_consump
+ with ln_inc and ln_inv as explanatory variables.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard

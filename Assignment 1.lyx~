@@ -842,6 +842,95 @@ Formulate and estimate a dynamic linear model with four lags for ln_consump
 \end_layout
 
 \begin_layout Standard
+In figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Dynamic-linear-model"
+
+\end_inset
+
+ we see the results of a dynamic linear model with four lags for 
+\emph on
+ln_consump.
+\end_layout
+
+\begin_layout Quote
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Dynamic linear model with four lags
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dynamic-linear-model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+preview true
+filename "reg_b1.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{misspec}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

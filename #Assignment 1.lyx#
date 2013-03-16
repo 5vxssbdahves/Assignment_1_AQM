@@ -904,26 +904,40 @@ filename "reg_b1.tex"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
+\begin_layout Quote
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 
+\end_layout
 
-\backslash
-begin{verbatim}
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+asdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "misspec.tex"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{verbatim}
 \end_layout
 
 \end_inset

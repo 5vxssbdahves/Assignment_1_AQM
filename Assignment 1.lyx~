@@ -828,7 +828,7 @@ name "fig:Graphs-for-ln_consump"
 \end_layout
 
 \begin_layout Standard
-Estimating an ARIMA(?,1?) gives...
+Estimating an ARIMA(?,1,?) gives...
 \end_layout
 
 \begin_layout Section
@@ -840,6 +840,37 @@ Dynamic Linear Model
 \emph on
 Formulate and estimate a dynamic linear model with four lags for ln_consump
  with ln_inc and ln_inv as explanatory variables.
+\end_layout
+
+\begin_layout Standard
+The model can be written as 
+\begin_inset Formula 
+\begin{equation}
+y_{t}=a_{0}+a_{1}y_{t-1}+a_{2}y_{t-2}+a_{3}y_{t-3}+a_{4}y_{t-4}+b_{0}ln\_inc_{t}+c_{0}ln\_inv_{t}+u_{t},\label{eq:1}
+\end{equation}
+
+\end_inset
+
+ where 
+\begin_inset Formula $y$
+\end_inset
+
+ is 
+\begin_inset Formula $ln\_consump$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See AQM lecture notes chapter 3, p.
+ 18.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -915,7 +946,7 @@ filename "reg_b1.tex"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -939,7 +970,7 @@ name "fig:Misspecification-tests"
 \begin_layout Plain Layout
 \align center
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -952,7 +983,7 @@ begin{alltt}
 
 {
 \backslash
-tiny
+footnotesize
 \backslash
 input{misspec.log}}
 \end_layout
@@ -978,7 +1009,116 @@ end{alltt}
 Error Correction Model
 \end_layout
 
+\begin_layout Quote
+
+\emph on
+Reformulate the model in b.
+ as an error correction model; store the log-likelihood value using the
+ command 
+\emph default
+–estimates store llu‐
+\emph on
+; and subject the model to mis-specification testing.
+\end_layout
+
 \begin_layout Standard
+Writing equation 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:1"
+
+\end_inset
+
+ as an error correction model 
+\end_layout
+
+\begin_layout Standard
+yields:
+\begin_inset Formula 
+\[
+\Delta y_{t}=a_{0}+\alpha_{1}\Delta y_{t-1}+\alpha_{2}\Delta y_{t-2}+\alpha\Delta_{3}y_{t-3}+\beta_{0}\Delta ln\_inc_{t}+\gamma_{0}\Delta ln\_inv_{t}+ay_{t-1}+u_{t},
+\]
+
+\end_inset
+
+ again where 
+\begin_inset Formula $y$
+\end_inset
+
+ is 
+\begin_inset Formula $ln\_consump$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See answer to assignment 4, IQM, p.
+ 13.
+\end_layout
+
+\end_inset
+
+ Running the regression gives:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Error Correction Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small
+\backslash
+input{c1.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

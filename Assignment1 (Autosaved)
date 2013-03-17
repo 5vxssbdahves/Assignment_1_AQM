@@ -35,7 +35,7 @@ noi varsoc
 log close
 }
 qui {
-log using ff.log, replace
+log using f2.log, replace
 noi di ". dln_consump dln_inc dln_inv, lags(1/2) dfk"
 noi var dln_consump dln_inc dln_inv, lags(1/2) dfk
 noi di ". varsoc"

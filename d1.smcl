@@ -1,0 +1,8 @@
+{smcl}
+{com}{sf}{ul off}
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}L3.dln_consump = 0{p_end}
+
+{txt}       F(  1,    82) ={res}    9.19
+{txt}{col 13}Prob > F ={res}    0.0032
+{smcl}
+{res}{sf}{ul off}

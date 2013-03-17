@@ -316,7 +316,7 @@ test as we have no AR or MA parameters in the model.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -379,7 +379,7 @@ reference "fig:ARIMA(4,1,0)-of-ln_inv"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -408,9 +408,31 @@ name "fig:ARIMA(4,1,0)-of-ln_inv"
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset include
-LatexCommand input
-filename "arima1a.tex"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+scriptsize
+\backslash
+input{arima1a.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
+\end_layout
 
 \end_inset
 
@@ -784,14 +806,36 @@ reference "fig:Dynamic-linear-model"
 ln_consump.
  
 \emph default
-Mis-specification tests can be seen in figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Misspecification-tests"
+Mis-specification tests are: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+footnotesize
+\backslash
+input{misspec.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
+\end_layout
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -832,69 +876,6 @@ filename "reg_b1.tex"
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Misspecification tests for dynamic linear model
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Misspecification-tests"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{alltt}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-footnotesize
-\backslash
-input{misspec.log}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{alltt}
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -958,45 +939,9 @@ See answer to assignment 4, IQM, p.
 
 \end_inset
 
- Running the regression gives results as can be seen in table 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "tab:Error-Correction-Model"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Error Correction Model
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Error-Correction-Model"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
+ Running the regression gives: 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1026,61 +971,8 @@ end{alltt}
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-The results of mis-specification tests can be seen in table 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "tab:Mis-specification-tests-for"
-
-\end_inset
-
-.
- The Ramsey RESET test and the two Breusch-Pagan tests for heteroskedasticity
- do not reveal any problems as we have p-values comfortably above, say,
- a 10% significance level.
- However, the White's test for homoskedasticity is rejected at a 10% significanc
-e level.
- Moreover, the Breusch-Godfrey LM test for autocorrelation shows some problems
- as the null hypothesis of no serial correlation is rejected for all the
- lags at the 5% significance level.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Mis-specification tests for ECM
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Mis-specification-tests-for"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
+The results of mis-specification tests are: 
 \begin_inset ERT
 status collapsed
 
@@ -1109,12 +1001,14 @@ end{alltt}
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
+ The Ramsey RESET test and the two Breusch-Pagan tests for heteroskedasticity
+ do not reveal any problems as we have p-values comfortably above, say,
+ a 10% significance level.
+ However, the White's test for homoskedasticity is rejected at a 10% significanc
+e level.
+ Moreover, the Breusch-Godfrey LM test for autocorrelation shows some problems
+ as the null hypothesis of no serial correlation is rejected for all the
+ lags at the 5% significance level.
 \end_layout
 
 \begin_layout Section
@@ -1130,9 +1024,54 @@ Reduce the model in successive steps by dropping insignificant variables
 \end_layout
 
 \begin_layout Standard
-Drop according to p-value, 
+We now drop the first lag of 
 \emph on
-ln_consump
+ln_consump 
+\emph default
+in the error correction model above.
+ This gives us the following result: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{c2.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+ Now we see that we do not have insignificant variables.
+\end_layout
+
+\begin_layout Standard
+The mis-specification tests of this model are: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{misspec3.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

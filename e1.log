@@ -1,26 +1,4 @@
-. lrtest llu1 llu2
-df(unrestricted) = df(restricted) = 7
-r(498);
+. lrtest llu llr
 
-end of do-file
-
-r(498);
-
-. do "/var/folders/p5/hbkh6hcn3bx04ttdzng4dzxr0000gn/T//SD12184.000000"
-
-. qui {
-log file already open
-r(604);
-
-end of do-file
-
-r(604);
-
-. do "/var/folders/p5/hbkh6hcn3bx04ttdzng4dzxr0000gn/T//SD12184.000000"
-
-. log close
-      name:  <unnamed>
-       log:  /Users/vrangbaek/Dropbox/Studieophold/College_of_Europe/AQM/Assignments/Assignment_1/e1.log
-  log type:  text
- closed on:  17 Mar 2013, 17:10:58
--------------------------------------------------------------------------------------------------------------------------------------------------
+Likelihood-ratio test                                 LR chi2(1)  =      0.05
+(Assumption: llr nested in llu)                       Prob > chi2 =    0.8195

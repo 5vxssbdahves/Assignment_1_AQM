@@ -1,0 +1,22 @@
+. arima ln_inv, arima(0,1,0)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood =  154.00497  
+Iteration 1:   log likelihood =  154.00497  
+
+ARIMA regression
+
+Sample:  1960q2 - 1982q4                        Number of obs      =        91
+                                                Wald chi2(.)       =         .
+Log likelihood =   154.005                      Prob > chi2        =         .
+
+------------------------------------------------------------------------------
+             |                 OPG
+    D.ln_inv |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ln_inv       |
+       _cons |   .0167964   .0047276     3.55   0.000     .0075304    .0260623
+-------------+----------------------------------------------------------------
+      /sigma |    .044543   .0020718    21.50   0.000     .0404823    .0486037
+------------------------------------------------------------------------------
+Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.

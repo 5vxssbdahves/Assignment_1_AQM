@@ -1,0 +1,6 @@
+. wntestq res1
+
+Portmanteau test for white noise
+---------------------------------------
+ Portmanteau (Q) statistic =    30.0852
+ Prob > chi2(40)           =     0.8728

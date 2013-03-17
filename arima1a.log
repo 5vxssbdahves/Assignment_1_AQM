@@ -1,3 +1,4 @@
+. arima ln_inv, arima(4,1,4)
 
 (setting optimization to BHHH)
 Iteration 0:   log likelihood =  151.19416  

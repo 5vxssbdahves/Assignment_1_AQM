@@ -296,64 +296,34 @@ reference "fig:Graphs-for-ln_inv"
 \end_inset
 
 , although it can be seen as decaying.
- Thus, we have evidence of an ARIMA(0,1,0) model.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:ARIMA(0,1,0)-of-ln_inv"
+ Thus, we have evidence of an ARIMA(0,1,0) model: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima1.log}} 
+\backslash
+end{alltt}
+\end_layout
 
 \end_inset
 
- shows the regression results of such an estimation.
- It does not make sense to do an
+
+\end_layout
+
+\begin_layout Standard
+It does not make sense to do an
 \family typewriter
  armaroot 
 \family default
 test as we have no AR or MA parameters in the model.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-ARIMA(0,1,0) of 
-\emph on
-ln_inv
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ARIMA(0,1,0)-of-ln_inv"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset CommandInset include
-LatexCommand input
-preview true
-filename "arima1.tex"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -364,50 +334,7 @@ reference "fig:Graphs-for-ln_inv"
 
 \end_inset
 
- is that we have an ARIMA(4,1,4) model the results of which can be see in
- figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:ARIMA(4,1,0)-of-ln_inv"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-ARIMA(4,1,4) of 
-\emph on
-ln_inv
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ARIMA(4,1,0)-of-ln_inv"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
+ is that we have an ARIMA(4,1,4) model, the results of which are: 
 \begin_inset ERT
 status open
 
@@ -415,21 +342,11 @@ status open
 
 
 \backslash
-begin{alltt}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
+begin{alltt} {
 \backslash
-scriptsize
+footnotesize
 \backslash
-input{arima1a.log}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
+input{arima1a.log}} 
 \backslash
 end{alltt}
 \end_layout
@@ -439,13 +356,90 @@ end{alltt}
 
 \end_layout
 
+\begin_layout Standard
+To test for stationarity we use the -armaroots- command to know whether
+ the absolute value of the roots of the characteristic equation are smaller
+ than one, which is required for stationarity.
+ As we can see in the following table all the roots are smaller than one
+ in absolute value: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima1b.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+ Graphically we can also confirm that none of the roots are larger than
+ one in absolute value:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig1b.png
+	display false
+	scale 30
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Using the Portmanteau statistics yield...
+We now turn to the ACF and the PACF for the residuals to confirm that these
+ have no distinct pattern:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig1res.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The graph above indeed seems to confirm that the residuals are white noise.
+\end_layout
+
+\begin_layout Standard
+The Portmanteau statistics confirms this by yielding: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima1c.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -794,18 +788,33 @@ See AQM lecture notes chapter 3, p.
 \end_layout
 
 \begin_layout Standard
-In figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Dynamic-linear-model"
+The results of a dynamic linear model with four lags for 
+\emph on
+ln_consump
+\emph default
+ are: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{b1.log}} 
+\backslash
+end{alltt}
+\end_layout
 
 \end_inset
 
- we see the results of a dynamic linear model with four lags for 
-\emph on
-ln_consump.
- 
-\emph default
+
+\end_layout
+
+\begin_layout Standard
 Mis-specification tests are: 
 \begin_inset ERT
 status collapsed
@@ -831,52 +840,6 @@ input{misspec.log}}
 
 \backslash
 end{alltt}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Dynamic linear model with four lags
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Dynamic-linear-model"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset CommandInset include
-LatexCommand input
-preview true
-filename "reg_b1.tex"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -1109,9 +1072,9 @@ Comparison of Models
 
 \emph on
 Save the log-likelihood value of the parsimonious model (–estimates store
- llr‐)and perform a likelihood ratio test comparing the model in c.
+ llr‐) and perform a likelihood ratio test comparing the model in c.
  with the model in d.
- (‐lrtest llu llr).
+ (‐lrtest llu llr-).
  You may wish to save the log-likelihood value at each step of the reduction
  using different names with the estimates command at each step.
 \end_layout
@@ -1128,7 +1091,7 @@ begin{alltt} {
 \backslash
 footnotesize
 \backslash
-input{d1.log}} 
+input{e1.log}} 
 \backslash
 end{alltt}
 \end_layout
@@ -1136,6 +1099,10 @@ end{alltt}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Can't reject that the models are different...
 \end_layout
 
 \begin_layout Section
@@ -1152,7 +1119,30 @@ Estimate a VAR(4) for the three variables dln_consump, dln_inc, and dln_inv,
 \end_layout
 
 \begin_layout Standard
-First we determine the lag structure by using three lags:
+First we start with a VAR(4) model: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{f0.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We then determine the lag structure by starting with three lags:
 \end_layout
 
 \begin_layout Standard
@@ -1216,10 +1206,26 @@ Finally, drop individual variables from each of the three equations until
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "Assignment 1"
-options "bibtotoc,chicago"
+We now drop individual variables from each equation until we end up with
+ the following parsimonious model with eight constraints:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{g1.log}} 
+\backslash
+end{alltt}
+\end_layout
 
 \end_inset
 

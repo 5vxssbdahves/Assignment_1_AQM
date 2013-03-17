@@ -1,0 +1,25 @@
+invalid subcommand ovtest
+r(321);
+
+end of do-file
+
+r(321);
+
+. do "/var/folders/p5/hbkh6hcn3bx04ttdzng4dzxr0000gn/T//SD12184.000000"
+
+. qui {
+log file already open
+r(604);
+
+end of do-file
+
+r(604);
+
+. do "/var/folders/p5/hbkh6hcn3bx04ttdzng4dzxr0000gn/T//SD12184.000000"
+
+. log close
+      name:  <unnamed>
+       log:  /Users/vrangbaek/Dropbox/Studieophold/College_of_Europe/AQM/Assignments/Assignment_1/misspec4.log
+  log type:  text
+ closed on:  17 Mar 2013, 18:34:32
+-------------------------------------------------------------------------------------------------------------------------------------------------

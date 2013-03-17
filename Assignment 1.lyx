@@ -130,13 +130,9 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Scatterplot of
+Graphs for
 \emph on
  ln_inv
-\emph default
- and 
-\emph on
-qtr
 \emph default
 
 \begin_inset CommandInset label
@@ -158,95 +154,7 @@ name "fig:Scatterplot-of-ln_inv"
 \begin_inset External
 	template RasterImage
 	filename fig1.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Autocorrelation function of 
-\emph on
-ln_inv
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Autocorrelation-function-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig2.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Partical autocorrelation function for 
-\emph on
-ln_inv
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Partical-autocorrelation-functio"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig3.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -262,7 +170,7 @@ name "fig:Partical-autocorrelation-functio"
 As can be seen in figure 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "fig:Autocorrelation-function-of"
+reference "fig:Scatterplot-of-ln_inv"
 
 \end_inset
 
@@ -312,7 +220,7 @@ reference "fig:Scatterplot-of-ln_inv"
  The PACF cuts off after one lag (see figure 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "fig:Partical-autocorrelation-functio"
+reference "fig:Scatterplot-of-ln_inv"
 
 \end_inset
 
@@ -355,31 +263,7 @@ name "fig:Graphs-for-ln_inv"
 \begin_inset External
 	template RasterImage
 	filename fig4.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig5.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig6.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -473,6 +357,94 @@ filename "arima1.tex"
 \end_layout
 
 \begin_layout Standard
+Another way of interpreting the graphs in figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Graphs-for-ln_inv"
+
+\end_inset
+
+ is that we have an ARIMA(4,1,4) model the results of which can be see in
+ figure 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:ARIMA(4,1,0)-of-ln_inv"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+ARIMA(4,1,4) of 
+\emph on
+ln_inv
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ARIMA(4,1,0)-of-ln_inv"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+scriptsize
+\backslash
+input{arima1a.log}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Using the Portmanteau statistics yield...
 \end_layout
 
@@ -533,31 +505,7 @@ name "fig:Graphs-for-ln_inc"
 \begin_inset External
 	template RasterImage
 	filename fig7.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig8.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig9.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -633,31 +581,7 @@ name "fig:Graphs-of-ln_inc"
 \begin_inset External
 	template RasterImage
 	filename fig10.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig11.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig12.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -1130,55 +1054,7 @@ end{alltt}
 \end_layout
 
 \begin_layout Standard
-The results of mis-specification tests can be seen in table 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "tab:Mis-specification-tests-for"
-
-\end_inset
-
-.
- The Ramsey RESET test and the two Breusch-Pagan tests for heteroskedasticity
- do not reveal any problems as we have p-values comfortably above, say,
- a 10% significance level.
- However, the White's test for homoskedasticity is rejected at a 10% significanc
-e level.
- Moreover, the Breusch-Godfrey LM test for autocorrelation shows some problems
- as the null hypothesis of no serial correlation is rejected for all the
- lags at the 5% significance level.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Mis-specification tests for ECM
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Mis-specification-tests-for"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
+The results of mis-specification tests are: 
 \begin_inset ERT
 status collapsed
 
@@ -1207,6 +1083,38 @@ end{alltt}
 
 \end_inset
 
+ The Ramsey RESET test and the two Breusch-Pagan tests for heteroskedasticity
+ do not reveal any problems as we have p-values comfortably above, say,
+ a 10% significance level.
+ However, the White's test for homoskedasticity is rejected at a 10% significanc
+e level.
+ Moreover, the Breusch-Godfrey LM test for autocorrelation shows some problems
+ as the null hypothesis of no serial correlation is rejected for all the
+ lags at the 5% significance level.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Mis-specification tests for ECM
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mis-specification-tests-for"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1228,9 +1136,61 @@ Reduce the model in successive steps by dropping insignificant variables
 \end_layout
 
 \begin_layout Standard
-Drop according to p-value, 
+We now drop the first lag of 
 \emph on
-ln_consump
+ln_consump 
+\emph default
+in the error correction model in table 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Error-Correction-Model"
+
+\end_inset
+
+.
+ This gives us the following result: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{c2.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mis-specification tests of this model are: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{misspec3.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

@@ -316,7 +316,7 @@ test as we have no AR or MA parameters in the model.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -379,7 +379,7 @@ reference "fig:ARIMA(4,1,0)-of-ln_inv"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -408,31 +408,9 @@ name "fig:ARIMA(4,1,0)-of-ln_inv"
 
 \begin_layout Plain Layout
 \align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{alltt}
-\end_layout
-
-\begin_layout Plain Layout
-
-{
-\backslash
-scriptsize
-\backslash
-input{arima1a.log}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{alltt}
-\end_layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "arima1a.tex"
 
 \end_inset
 
@@ -1152,61 +1130,9 @@ Reduce the model in successive steps by dropping insignificant variables
 \end_layout
 
 \begin_layout Standard
-We now drop the first lag of 
+Drop according to p-value, 
 \emph on
-ln_consump 
-\emph default
-in the error correction model in table 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "tab:Error-Correction-Model"
-
-\end_inset
-
-.
- This gives us the following result: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{alltt} {
-\backslash
-footnotesize
-\backslash
-input{c2.log}} 
-\backslash
-end{alltt}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The mis-specification tests of this model are: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{alltt} {
-\backslash
-footnotesize
-\backslash
-input{misspec3.log}} 
-\backslash
-end{alltt}
-\end_layout
-
-\end_inset
-
-
+ln_consump
 \end_layout
 
 \begin_layout Section

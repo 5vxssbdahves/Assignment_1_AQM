@@ -1,0 +1,63 @@
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood =  151.19416  
+Iteration 1:   log likelihood =   153.8349  
+Iteration 2:   log likelihood =  155.72441  
+Iteration 3:   log likelihood =  158.06115  
+Iteration 4:   log likelihood =  158.78522  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood =  160.42741  
+Iteration 6:   log likelihood =  161.31532  
+Iteration 7:   log likelihood =  161.57824  
+Iteration 8:   log likelihood =  162.63005  
+Iteration 9:   log likelihood =  162.99665  
+Iteration 10:  log likelihood =  163.47528  
+Iteration 11:  log likelihood =  163.81731  
+Iteration 12:  log likelihood =  164.09801  
+Iteration 13:  log likelihood =  164.17117  
+Iteration 14:  log likelihood =  164.23693  
+(switching optimization to BHHH)
+Iteration 15:  log likelihood =  164.28633  
+Iteration 16:  log likelihood =  164.28633  (backed up)
+Iteration 17:  log likelihood =  164.28633  (not concave)
+Iteration 18:  log likelihood =  164.29517  
+Iteration 19:  log likelihood =  164.29517  (backed up)
+(switching optimization to BFGS)
+Iteration 20:  log likelihood =  164.29519  (backed up)
+Iteration 21:  log likelihood =  164.29682  
+Iteration 22:  log likelihood =  164.30153  
+Iteration 23:  log likelihood =  164.30185  
+Iteration 24:  log likelihood =   164.3047  
+Iteration 25:  log likelihood =  164.30508  
+Iteration 26:  log likelihood =  164.30518  
+Iteration 27:  log likelihood =  164.30518  
+
+ARIMA regression
+
+Sample:  1960q2 - 1982q4                        Number of obs      =        91
+                                                Wald chi2(7)       =    361.32
+Log likelihood =  164.3052                      Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+    D.ln_inv |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ln_inv       |
+       _cons |   .0170483   .0066675     2.56   0.011     .0039803    .0301164
+-------------+----------------------------------------------------------------
+ARMA         |
+          ar |
+         L1. |    .250352   .3175816     0.79   0.431    -.3720964    .8728004
+         L2. |  -.6410894   .3055835    -2.10   0.036    -1.240022   -.0421568
+         L3. |   .6959524   .2326489     2.99   0.003     .2399689    1.151936
+         L4. |  -.1234277    .371418    -0.33   0.740    -.8513935    .6045381
+             |
+          ma |
+         L1. |  -.4332859   .3581174    -1.21   0.226    -1.135183    .2686114
+         L2. |   .7828925   .3674864     2.13   0.033     .0626323    1.503153
+         L3. |  -.7487543          .        .       .            .           .
+         L4. |   .5336774    .347815     1.53   0.125    -.1480275    1.215382
+-------------+----------------------------------------------------------------
+      /sigma |   .0387658   .0050688     7.65   0.000     .0288311    .0487004
+------------------------------------------------------------------------------
+Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.

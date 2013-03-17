@@ -1,0 +1,64 @@
+
+Ramsey RESET test using powers of the fitted values of dln_consump
+       Ho:  model has no omitted variables
+                  F(3, 79) =      1.20
+                  Prob > F =      0.3151
+
+Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+         Variables: fitted values of dln_consump
+
+         chi2(1)      =     0.57
+         Prob > chi2  =   0.4492
+
+Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+         Variables: L.dln_consump L2.dln_consump L3.dln_consump dln_inc dln_inv
+
+         chi2(5)      =     4.26
+         Prob > chi2  =   0.5122
+
+White's test for Ho: homoskedasticity
+         against Ha: unrestricted heteroskedasticity
+
+         chi2(20)     =     25.95
+         Prob > chi2  =    0.1675
+
+Cameron & Trivedi's decomposition of IM-test
+
+---------------------------------------------------
+              Source |       chi2     df      p
+---------------------+-----------------------------
+  Heteroskedasticity |      25.95     20    0.1675
+            Skewness |       9.69      5    0.0846
+            Kurtosis |       0.62      1    0.4322
+---------------------+-----------------------------
+               Total |      36.25     26    0.0871
+---------------------------------------------------
+
+----------------------------------------------------------
+ (n = 88) |        D-H     P-value        asy.     P-value
+----------+-----------------------------------------------
+Residuals |     2.7414      0.2539      2.6979      0.2595
+----------------------------------------------------------
+
+Breusch-Godfrey LM test for autocorrelation
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |          4.309               1                   0.0379
+       2     |          8.027               2                   0.0181
+       3     |          9.487               3                   0.0235
+       4     |         10.267               4                   0.0362
+---------------------------------------------------------------------------
+                        H0: no serial correlation
+LM test for autoregressive conditional heteroskedasticity (ARCH)
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |          3.173               1                   0.0748
+       2     |          8.125               2                   0.0172
+       3     |          1.381               3                   0.7100
+       4     |          0.998               4                   0.9101
+---------------------------------------------------------------------------
+         H0: no ARCH effects      vs.  H1: ARCH(p) disturbance

@@ -1,4 +1,5 @@
-clear*log using assignemnt1.log, replaceset more offset graphics oncd /Users/vrangbaek/Dropbox/Studieophold/College_of_Europe/AQM/Assignments/Assignment_1webuse lutkepohl2.dta, cleartssetdes*** a. ***** a.i. ln_inv **scatter ln_inv qtr, saving(ln_inv_qtr, replace) nodrawac ln_inv, saving(ac_ln_inv, replace) nodrawpac ln_inv, saving(pac_ln_inv, replace) nodrawquietly graph combine ln_inv_qtr.gph ac_ln_inv.gph pac_ln_inv.gphgraph export fig1.png, replace width(1000)scatter D.ln_inv qtr, saving(dln_inv_qtr, replace) nodrawac D.ln_inv, saving(dac_ln_inv, replace) nodrawpac D.ln_inv, saving(dpac_ln_inv, replace) nodrawgraph combine dln_inv_qtr.gph dac_ln_inv.gph dpac_ln_inv.gphgraph export fig4.png, replace width(1000)
+clearset more off, permanentlyset graphics oncd /Users/vrangbaek/Dropbox/Studieophold/College_of_Europe/AQM/Assignments/Assignment_1webuse lutkepohl2.dta, cleartsset
+log closedes*** a. ***** a.i. ln_inv **line ln_inv qtr, saving(ln_inv_qtr, replace) nodrawac ln_inv, saving(ac_ln_inv, replace) nodrawpac ln_inv, saving(pac_ln_inv, replace) nodrawquietly graph combine ln_inv_qtr.gph ac_ln_inv.gph pac_ln_inv.gphgraph export fig1.png, replace width(1000)line D.ln_inv qtr, saving(dln_inv_qtr, replace) nodrawac D.ln_inv, saving(dac_ln_inv, replace) nodrawpac D.ln_inv, saving(dpac_ln_inv, replace) nodrawgraph combine dln_inv_qtr.gph dac_ln_inv.gph dpac_ln_inv.gphgraph export fig4.png, replace width(1000)
 qui {log using arima1.log, replacenoi di ". arima ln_inv, arima(0,1,0)"noi arima ln_inv, arima(0,1,0)log close}
 
 qui {log using arima1a.log, replacenoi di ". arima ln_inv, arima(4,1,4)"noi arima ln_inv, arima(4,1,4)log close}
@@ -19,7 +20,51 @@ log using arima1c.log, replace
 noi di ". wntestq res1"
 noi wntestq res1
 log close
-}** a.ii. ln_inc **scatter ln_inc qtr, saving(ln_inc_qtr, replace) nodrawac ln_inc, saving(ac_ln_inc, replace) nodrawpac ln_inc, saving(pac_ln_inc, replace) nodrawgraph combine ln_inc_qtr.gph ac_ln_inc.gph pac_ln_inc.gphgraph export fig7.png, replace width(1000)scatter D.ln_inc qtr, saving(dln_inc_qtr, replace) nodrawac D.ln_inc, saving(dac_ln_inc, replace) nodrawpac D.ln_inc, saving(dpac_ln_inc, replace) nodrawgraph combine dln_inc_qtr.gph dac_ln_inc.gph dpac_ln_inc.gphgraph export fig10.png, replace width(1000)arima ln_inc, arima(0,1,0)outreg2 using arima2, replace tex(frag) ** a.iii. ln_consumpscatter ln_consump qtr, saving(ln_consump_qtr, replace) nodrawac ln_consump, saving(ac_ln_consump, replace) nodrawpac ln_consump, saving(pac_ln_consump, replace) nodrawgraph combine ln_consump_qtr.gph ac_ln_consump.gph pac_ln_consump.gphgraph export fig13.png, replace width(1000)scatter D.ln_consump qtr, saving(ln_consump_qtr, replace) nodrawac D.ln_consump, saving(ac_ln_consump, replace) nodrawpac D.ln_consump, saving(pac_ln_consump, replace) nodrawgraph combine ln_consump_qtr.gph ac_ln_consump.gph pac_ln_consump.gphgraph export fig14.png, replace width(1000)*** b. ***
+}** a.ii. ln_inc **line ln_inc qtr, saving(ln_inc_qtr, replace) nodrawac ln_inc, saving(ac_ln_inc, replace) nodrawpac ln_inc, saving(pac_ln_inc, replace) nodrawgraph combine ln_inc_qtr.gph ac_ln_inc.gph pac_ln_inc.gphgraph export fig7.png, replace width(1000)line D.ln_inc qtr, saving(dln_inc_qtr, replace) nodrawac D.ln_inc, saving(dac_ln_inc, replace) nodrawpac D.ln_inc, saving(dpac_ln_inc, replace) nodrawgraph combine dln_inc_qtr.gph dac_ln_inc.gph dpac_ln_inc.gphgraph export fig10.png, replace width(1000)qui {
+log using arima1aii.log, replace
+noi di ". arima ln_inc, arima(0,1,0)"noi arima ln_inc, arima(0,1,0)
+noi predict res2,r
+noi di ". armaroots"noi armaroots
+log close
+}
+
+qui {
+log using arima2aii.log, replace
+noi di ". arima ln_inc, arima(3,1,3)"noi arima ln_inc, arima(3,1,3)
+noi predict res3,r
+noi di ". armaroots"noi armaroots
+log close
+}
+
+qui {
+log using arima3aii.log, replace
+noi di ". arima ln_inc, arima(3,1,0)"noi arima ln_inc, arima(3,1,0)
+noi predict res4,r
+noi di ". armaroots"noi armaroots
+noi di ". wntestq res4"
+noi wntestq res4
+log close
+}
+
+ac res4, saving(res4ac, replace) nodraw
+pac res4, saving(res4pac, replace) nodraw
+graph combine res4ac.gph res4pac.gph, cols(1) rows(2)
+graph export fig4res.png, replace** a.iii. ln_consumpline ln_consump qtr, saving(ln_consump_qtr, replace) nodrawac ln_consump, saving(ac_ln_consump, replace) nodrawpac ln_consump, saving(pac_ln_consump, replace) nodrawline D.ln_consump qtr, saving(dln_consump_qtr, replace) nodrawac D.ln_consump, saving(dac_ln_consump, replace) nodrawpac D.ln_consump, saving(dpac_ln_consump, replace) nodrawgraph combine ln_consump_qtr.gph ac_ln_consump.gph pac_ln_consump.gph dln_consump_qtr.gph dac_ln_consump.gph dpac_ln_consump.gph, cols(3) row(2)graph export fig13.png, replace width(1000)
+
+qui {
+log using arima1aiii.log, replace
+noi di ". arima ln_inc, arima(2,1,2)"noi arima ln_inc, arima(2,1,2)
+noi predict res5,r
+noi di ". armaroots"noi armaroots
+noi di ". wntestq res5"
+noi wntestq res5
+log close
+}
+
+ac res5, saving(res5ac, replace) nodraw
+pac res5, saving(res5pac, replace) nodraw
+graph combine res5ac.gph res5pac.gph, cols(1) rows(2)
+graph export fig5res.png, replace*** b. ***
 qui {
 log using b1.log, replace
 noi di ". reg ln_consump L(1/4).ln_consump ln_inc ln_inv"noi reg ln_consump L(1/4).ln_consump ln_inc ln_invlog close
@@ -108,5 +153,8 @@ noi di ". varlmar"
 noi varlmar
 noi di ". varnorm"
 noi varnorm
+noi di ". varstable, graph"
+noi varstable, graph
+graph export fig1g.png, replace
 log close
 }

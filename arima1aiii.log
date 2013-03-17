@@ -1,0 +1,68 @@
+. arima ln_inc, arima(2,1,2)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood =  270.80789  
+Iteration 1:   log likelihood =  273.46539  
+Iteration 2:   log likelihood =  274.91076  
+Iteration 3:   log likelihood =  276.40311  
+Iteration 4:   log likelihood =  276.40314  (backed up)
+(switching optimization to BFGS)
+Iteration 5:   log likelihood =  276.40314  (backed up)
+Iteration 6:   log likelihood =  276.88434  
+Iteration 7:   log likelihood =  277.73776  
+Iteration 8:   log likelihood =  278.36479  
+Iteration 9:   log likelihood =  278.46702  
+Iteration 10:  log likelihood =  278.47605  
+Iteration 11:  log likelihood =  278.47636  
+Iteration 12:  log likelihood =  278.47641  
+Iteration 13:  log likelihood =  278.47642  
+
+ARIMA regression
+
+Sample:  1960q2 - 1982q4                        Number of obs      =        91
+                                                Wald chi2(4)       =     81.47
+Log likelihood =  278.4764                      Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+             |                 OPG
+    D.ln_inc |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ln_inc       |
+       _cons |   .0192823   .0026045     7.40   0.000     .0141776    .0243869
+-------------+----------------------------------------------------------------
+ARMA         |
+          ar |
+         L1. |  -.0365622   .2870042    -0.13   0.899      -.59908    .5259557
+         L2. |   .7588994   .2752277     2.76   0.006     .2194631    1.298336
+             |
+          ma |
+         L1. |   .2707034   207.4331     0.00   0.999    -406.2907    406.8321
+         L2. |  -.7292833   151.3058    -0.00   0.996    -297.2832    295.8246
+-------------+----------------------------------------------------------------
+      /sigma |   .0112218   1.163677     0.01   0.496            0    2.291987
+------------------------------------------------------------------------------
+Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.
+(1 missing value generated)
+. armaroots
+
+   Characteristic roots of AR-polynomial
+  +-----------------------------------------------------+
+  |    Characteristic roots  |   Modulus   |   Period   |
+  |--------------------------+-------------+------------|
+  |  -.8896212               |   .889621   |            |
+  |    .853059               |   .853059   |            |
+  +-----------------------------------------------------+
+
+   Characteristic roots of MA-polynomial
+  +-----------------------------------------------------+
+  |    Characteristic roots  |   Modulus   |   Period   |
+  |--------------------------+-------------+------------|
+  |  -.9999923               |   .999992   |            |
+  |   .7292889               |   .729289   |            |
+  +-----------------------------------------------------+
+. wntestq res1
+
+Portmanteau test for white noise
+---------------------------------------
+ Portmanteau (Q) statistic =    33.7915
+ Prob > chi2(40)           =     0.7447

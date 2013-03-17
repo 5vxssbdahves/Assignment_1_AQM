@@ -70,7 +70,11 @@ AQM Assignment One
 \end_layout
 
 \begin_layout Author
-Ada Ziemyte, Shalva, Anders Riis
+Ada Žiemyte, Shalva Kilasonia, Anders Riis
+\end_layout
+
+\begin_layout Date
+March 2013
 \end_layout
 
 \begin_layout Standard
@@ -453,58 +457,15 @@ We now turn to the variable
 \emph on
 ln_inc.
  
-\emph default
-The graphs shown in 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Graphs-for-ln_inc"
-
-\end_inset
-
- again demonstrate that we probably have non-stationary data, so we do a
- first difference transformation again.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Graphs for 
-\emph on
-ln_inc
-\emph default
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Graphs-for-ln_inc"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset External
 	template RasterImage
 	filename fig7.png
-	scale 30
-
-\end_inset
-
-
-\end_layout
+	display false
+	scale 35
 
 \end_inset
 
@@ -512,15 +473,26 @@ name "fig:Graphs-for-ln_inc"
 \end_layout
 
 \begin_layout Standard
-The results of this first difference transformation can be seen in figure
- 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Graphs-of-ln_inc"
+The graphs shown above again demonstrate that we probably have non-stationary
+ data, so we do a first difference transformation again.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig10.png
+	display false
+	scale 35
 
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Standard
+The results of this first difference transformation can be seen in the graphs
+ above.
  Now the data does not portray a non-stationary mean, so we decide that
  
 \begin_inset Formula $d=1$
@@ -538,31 +510,49 @@ reference "fig:Graphs-of-ln_inc"
 \end_inset
 
 .
+ Estimating an ARIMA(0,1,0) model gives the results: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima1aii.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another possibility is however to interpret the ACF and the PACF cuts off
+ after three after significant values so we have an ARIMA(3,1,3) model:
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Graphs of 
-\emph on
-ln_inc
-\emph default
- after first differencing
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Graphs-of-ln_inc"
-
-\end_inset
 
 
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima2aii.log}} 
+\backslash
+end{alltt}
 \end_layout
 
 \end_inset
@@ -570,88 +560,50 @@ name "fig:Graphs-of-ln_inc"
 
 \end_layout
 
+\begin_layout Standard
+All the significance values for moving average is however insignificant
+ and the characteristic roots of the MA-polynomial is not smaller than one
+ in absolute value, so we postulate an ARIMA(3,1,0):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima3aii.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Portmanteau test above indicates that the residuals are white noise.
+ To verify this, we also produce the residuals of the ARIMA(3,1,0) model:
+\end_layout
+
+\begin_layout Standard
 \align center
 \begin_inset External
 	template RasterImage
-	filename fig10.png
-	scale 30
+	filename fig4res.png
+	display false
+	scale 40
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Estimating an ARIMA(0,1,0) model gives the results shown in figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Results-from-ARIMA(0,1,0)"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Results from ARIMA(0,1,0) of 
-\emph on
-ln_inc
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Results-from-ARIMA(0,1,0)"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset CommandInset include
-LatexCommand input
-preview true
-filename "arima2.tex"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The Portmanteau statistics yield...
 \end_layout
 
 \begin_layout Subsection
@@ -667,73 +619,43 @@ Identifying an ARIMA model for the variable
 \emph on
 ln_consump
 \emph default
- we again first look at some graphs in figure 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Graphs-for-ln_consump"
-
-\end_inset
-
-.
+ we again first look at some graphs.
  Again we have to take the first diffference to correct for stationarity.
- After this is done we see in the lower pane that we have a stationary mean.
+ After this is done we see in the lower pane that we have a stationary mean:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Graphs for 
-\emph on
-ln_consump
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Graphs-for-ln_consump"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset External
 	template RasterImage
 	filename fig13.png
 	display false
-	scale 30
+	scale 35
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template RasterImage
-	filename fig14.png
-	display false
-	scale 30
-
-\end_inset
-
-
+\begin_layout Standard
+We postulate an ARIMA(2,1,2):
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
 \begin_layout Plain Layout
 
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{arima1aiii.log}} 
+\backslash
+end{alltt}
 \end_layout
 
 \end_inset
@@ -742,7 +664,20 @@ name "fig:Graphs-for-ln_consump"
 \end_layout
 
 \begin_layout Standard
-Estimating an ARIMA(?,1,?) gives...
+The ACF and the PACF of the residuals is given by:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig5res.png
+	display false
+	scale 45
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1102,7 +1037,7 @@ end{alltt}
 \end_layout
 
 \begin_layout Standard
-Can't reject that the models are different...
+We cannot reject that the restricted and the unrestricted models are different.
 \end_layout
 
 \begin_layout Section
@@ -1119,7 +1054,7 @@ Estimate a VAR(4) for the three variables dln_consump, dln_inc, and dln_inv,
 \end_layout
 
 \begin_layout Standard
-First we start with a VAR(4) model: 
+First we start with a VAR(4) model using the : 
 \begin_inset ERT
 status open
 
@@ -1142,7 +1077,11 @@ end{alltt}
 \end_layout
 
 \begin_layout Standard
-We then determine the lag structure by starting with three lags:
+Althout fourth lag of 
+\emph on
+ln_inv
+\emph default
+ is significant, we proceed with three lags:
 \end_layout
 
 \begin_layout Standard
@@ -1226,6 +1165,24 @@ input{g1.log}}
 \backslash
 end{alltt}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The last part shows the stability analysis, which concludes that all the
+ eigenvalues lie inside the unit circle:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template RasterImage
+	filename fig1g.png
+	display false
+	scale 40
 
 \end_inset
 

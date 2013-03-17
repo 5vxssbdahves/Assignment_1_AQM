@@ -1,0 +1,53 @@
+. arima ln_inc, arima(3,1,0)
+
+(setting optimization to BHHH)
+Iteration 0:   log likelihood =  278.89994  
+Iteration 1:   log likelihood =  278.90832  
+Iteration 2:   log likelihood =  278.91024  
+Iteration 3:   log likelihood =  278.91141  
+Iteration 4:   log likelihood =  278.91196  
+(switching optimization to BFGS)
+Iteration 5:   log likelihood =  278.91231  
+Iteration 6:   log likelihood =  278.91275  
+Iteration 7:   log likelihood =  278.91278  
+Iteration 8:   log likelihood =  278.91278  
+
+ARIMA regression
+
+Sample:  1960q2 - 1982q4                        Number of obs      =        91
+                                                Wald chi2(3)       =      7.42
+Log likelihood =  278.9128                      Prob > chi2        =    0.0597
+
+------------------------------------------------------------------------------
+             |                 OPG
+    D.ln_inc |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ln_inc       |
+       _cons |   .0193577   .0022504     8.60   0.000      .014947    .0237684
+-------------+----------------------------------------------------------------
+ARMA         |
+          ar |
+         L1. |   .0680786   .1137906     0.60   0.550    -.1549469     .291104
+         L2. |   .1220981   .1069794     1.14   0.254    -.0875776    .3317738
+         L3. |   .2737841   .1216749     2.25   0.024     .0353056    .5122626
+-------------+----------------------------------------------------------------
+      /sigma |   .0112707   .0007352    15.33   0.000     .0098298    .0127116
+------------------------------------------------------------------------------
+Note: The test of the variance against zero is one sided, and the two-sided confidence interval is truncated at zero.
+(1 missing value generated)
+. armaroots
+
+   Characteristic roots of AR-polynomial
+  +-----------------------------------------------------+
+  |    Characteristic roots  |   Modulus   |   Period   |
+  |--------------------------+-------------+------------|
+  |   .7373076               |   .737308   |            |
+  |  -.3346145 +  .5092766i  |   .609368   |     2.92   |
+  |  -.3346145 -  .5092766i  |   .609368   |     2.92   |
+  +-----------------------------------------------------+
+. wntestq res1
+
+Portmanteau test for white noise
+---------------------------------------
+ Portmanteau (Q) statistic =    30.2217
+ Prob > chi2(40)           =     0.8689

@@ -1042,6 +1042,13 @@ We cannot reject that the restricted and the unrestricted models are different.
 
 \begin_layout Section
 VAR(4) Model
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:VAR(4)-Model"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Quote
@@ -1054,7 +1061,8 @@ Estimate a VAR(4) for the three variables dln_consump, dln_inc, and dln_inv,
 \end_layout
 
 \begin_layout Standard
-First we start with a VAR(4) model using the : 
+First we start with a VAR(4) model using the small sample correction command
+ -dfk-: 
 \begin_inset ERT
 status open
 
@@ -1144,11 +1152,13 @@ Finally, drop individual variables from each of the three equations until
  you end up with a parsimonious model.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 We now drop individual variables from each equation until we end up with
  the following parsimonious model with eight constraints:
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -1187,6 +1197,47 @@ The last part shows the stability analysis, which concludes that all the
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Nonetheless, since the fourth lag was significant, we also start with a
+ four lag model, where we have imposed 24 constraints:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{alltt} {
+\backslash
+footnotesize
+\backslash
+input{g2.log}} 
+\backslash
+end{alltt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The likelihood-ratio test shows us however that we cannot reject that the
+ unrestricted model from section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:VAR(4)-Model"
+
+\end_inset
+
+ is different from the restricted model just estimated.
+ Moreover, the -varlmar- misspecification command tells us the exogenous
+ variable may not be collinear with the dependent variable.
 \end_layout
 
 \end_body

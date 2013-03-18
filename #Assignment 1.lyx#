@@ -1042,13 +1042,6 @@ We cannot reject that the restricted and the unrestricted models are different.
 
 \begin_layout Section
 VAR(4) Model
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:VAR(4)-Model"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Quote
@@ -1227,15 +1220,7 @@ end{alltt}
 \end_layout
 
 \begin_layout Standard
-The likelihood-ratio test shows us however that we cannot reject that the
- unrestricted model from section 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:VAR(4)-Model"
-
-\end_inset
-
- is different from the restricted model just estimated.
+The likelihood-ratio test how
 \end_layout
 
 \end_body

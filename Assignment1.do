@@ -98,6 +98,7 @@ noi di ". var dln_consump dln_inc dln_inv, lags(1/4) dfk"
 noi var dln_consump dln_inc dln_inv, lags(1/4) dfk
 noi di ". varsoc"
 noi varsoc
+estimates store llu2
 log close
 }
 
@@ -129,7 +130,7 @@ log close
 
 
 *** g. ***
-* Drop variables
+* Drop variables from start with 3 lags
 constraint 1 [dln_consump]L.dln_inv=0
 var dln_consump dln_inc dln_inv, lags(1/2) dfk constraint (1)
 constraint 2 [dln_inc]L2.dln_inc=0
@@ -149,6 +150,8 @@ qui {
 log using g1.log, replace
 noi di ". var dln_consump dln_inc dln_inv, lags(1/2) dfk constraint (1 2 3 4 5 6 7 8)"
 noi var dln_consump dln_inc dln_inv, lags(1/2) dfk constraint (1 2 3 4 5 6 7 8)
+noi di ". noi lrtest llu2 llr2"
+noi lrtest llu2 llr2
 noi di ". varlmar"
 noi varlmar
 noi di ". varnorm"
@@ -157,4 +160,47 @@ noi di ". varstable, graph"
 noi varstable, graph
 graph export fig1g.png, replace
 log close
-}
+}
+
+* Drop variables start from 4 lags
+var dln_consump dln_inc dln_inv, lags(1/4) dfk
+constraint 1 [dln_consump]L4.dln_consump = 0
+constraint 2 [dln_consump]L4.dln_inv = 0
+constraint 3 [dln_consump]L4.dln_inc = 0
+constraint 4 [dln_inv]L4.dln_consump = 0
+constraint 5 [dln_inv]L4.dln_inc = 0
+constraint 6 [dln_inc]L4.dln_consump = 0
+constraint 7 [dln_inc]L4.dln_inv = 0
+constraint 8 [dln_inc]L4.dln_inc = 0
+constraint 9 [dln_consump]L3.dln_consump = 0
+constraint 10 [dln_consump]L3.dln_inv = 0
+constraint 11 [dln_consump]L3.dln_inc = 0
+constraint 12 [dln_inv]L3.dln_consump = 0
+constraint 13 [dln_inv]L3.dln_inc = 0
+constraint 14 [dln_inc]L3.dln_consump = 0
+constraint 15 [dln_inc]L3.dln_inv = 0
+constraint 16 [dln_inc]L3.dln_inc = 0
+constraint 17 [dln_consump]L2.dln_consump = 0
+constraint 18 [dln_inv]L2.dln_consump = 0
+constraint 19 [dln_inv]L2.dln_inc = 0
+constraint 20 [dln_inc]L2.dln_consump = 0
+constraint 21 [dln_inc]L2.dln_inc = 0 
+constraint 22 [dln_inv]L1.dln_consump = 0
+constraint 23 [dln_inv]L1.dln_inc = 0
+constraint 24 [dln_inc]L1.dln_inc = 0   qui {
+log using g2.log, replace
+noi di ". noi var dln_consump dln_inc dln_inv, lags(1/4) dfk constraint (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24)"
+noi var dln_consump dln_inc dln_inv, lags(1/4) dfk constraint (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24)
+noi di ". estimates store llr2"
+noi estimates store llr2
+noi di ". lrtest llu2 llr2"
+noi lrtest llu2 llr2
+noi di ". varlmar"
+noi varlmar
+noi di ". varnorm"
+noi varnorm
+noi di ". varstable, graph"
+noi varstable, graph
+graph export fig2g.png, replace
+log close
+}

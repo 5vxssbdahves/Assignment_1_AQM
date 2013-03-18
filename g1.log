@@ -78,6 +78,10 @@ dln_inv      |
              |
        _cons |  -.0097218   .0125614    -0.77   0.439    -.0343416     .014898
 ------------------------------------------------------------------------------
+. noi lrtest llu2 llr2
+
+Likelihood-ratio test                                 LR chi2(8)  =      8.54
+(Assumption: llr2 nested in llu2)                     Prob > chi2 =    0.3821
 . varlmar
 
    Lagrange-multiplier test
@@ -120,6 +124,7 @@ dln_inv      |
   |                ALL |           13.114   3    0.00440   |
   +--------------------------------------------------------+
    dfk estimator used in computations
+. varstable, graph
 
    Eigenvalue stability condition
   +----------------------------------------+

@@ -1182,8 +1182,19 @@ end{alltt}
 \end_layout
 
 \begin_layout Standard
-The last part shows the stability analysis, which concludes that all the
- eigenvalues lie inside the unit circle:
+The likelihood-ratio test above shows us however that we cannot reject that
+ the unrestricted model from section 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:VAR(4)-Model"
+
+\end_inset
+
+ is different from the restricted model just estimated.
+ The mis-specification tests however portrays some problems as we for instance
+ cannot reject that we have no autocorrelation.
+ Finally, the last part shows the stability analysis, which concludes that
+ all the eigenvalues lie inside the unit circle:
 \end_layout
 
 \begin_layout Standard
@@ -1197,47 +1208,6 @@ The last part shows the stability analysis, which concludes that all the
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Nonetheless, since the fourth lag was significant, we also start with a
- four lag model, where we have imposed 24 constraints:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{alltt} {
-\backslash
-footnotesize
-\backslash
-input{g2.log}} 
-\backslash
-end{alltt}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The likelihood-ratio test shows us however that we cannot reject that the
- unrestricted model from section 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:VAR(4)-Model"
-
-\end_inset
-
- is different from the restricted model just estimated.
- Moreover, the -varlmar- misspecification command tells us the exogenous
- variable may not be collinear with the dependent variable.
 \end_layout
 
 \end_body
